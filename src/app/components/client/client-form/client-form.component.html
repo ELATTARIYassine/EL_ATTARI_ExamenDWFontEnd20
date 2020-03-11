@@ -1,0 +1,62 @@
+<div class="divConfig">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item active" aria-current="page">Client</li>
+    </ol>
+    <div class="container">
+        <h3>Gestion des clients</h3>
+    </div>
+</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="customLinks"><a routerLink="/produits">Gestion des produits</a></li>
+            <li><a routerLink="/fournisseurs">Gestion des fournisseurs</a></li>
+            <li><a routerLink="/clients">Gestion des clients</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="text-center btn-margs">
+    <span>&nbsp;</span>
+    <button class="btn btn-primary" routerLink="/clients">Listes clients</button>
+</div>
+<div class="container margs">
+    <form>
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" [(ngModel)]="client.nom" name="z" class="form-control" id="nom" placeholder="Nom">
+        </div>
+        <div class="form-group">
+            <label for="nc">Prenom</label>
+            <input type="text" [(ngModel)]="client.prenom" name="nom_court" class="form-control" id="nc" placeholder="Prenom">
+        </div>
+        <div class="form-group">
+            <label for="pb">Status</label>
+            <input type="text" [(ngModel)]="client.status" name="prixBase" class="form-control" id="pb" placeholder="Status">
+        </div>
+        <div class="form-group">
+            <label for="pv">Photo</label>
+            <input type="text" [(ngModel)]="client.photo" name="prixVente" class="form-control" id="pv" placeholder="Photo">
+        </div>
+        <div class="form-group">
+            <label for="sm">Tel</label>
+            <input type="tel" [(ngModel)]="client.tel" name="se" class="form-control" id="sm" placeholder="tel">
+        </div>
+        <div class="form-group">
+            <label for="up">Email</label>
+            <input type="tel" [(ngModel)]="client.email" name="ups" class="form-control" id="up" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="ip">Adresse</label>
+            <input type="text" [(ngModel)]="client.adresse" name="prd" class="form-control" id="ip" placeholder="Adresse">
+        </div>
+        <div class="form-group">
+            <label for="qi">Ville</label>
+            <input type="text" [(ngModel)]="client.ville" name="pi" class="form-control" id="qi" placeholder="Ville">
+        </div>
+        <div class="text-center">
+            <button type="submit" *ngIf="onAddOrUpdate" (click)="processForm()" class="btn btn-primary">Ajouter client</button>
+            <button type="submit" *ngIf="!onAddOrUpdate" (click)="processForm()" class="btn btn-primary">Modifier client</button>
+        </div>
+    </form>
+</div>

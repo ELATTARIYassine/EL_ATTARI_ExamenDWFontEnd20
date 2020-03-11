@@ -1,0 +1,51 @@
+<div class="divConfig">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item active" aria-current="page">produit</li>
+    </ol>
+    <div class="container">
+        <h3>Gestion des produit</h3>
+    </div>
+</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a routerLink="/produits">Gestion des produits</a></li>
+            <li><a routerLink="/fournisseurs">Gestion des fournisseurs</a></li>
+            <li><a routerLink="/clients">Gestion des clients</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="text-center btn-margs">
+    <button class="btn btn-primary" (click)="newProduit()">Ajouter produit</button>
+    <span>&nbsp;</span>
+    <button class="btn btn-primary" routerLink="/produits">Listes produits</button>
+</div>
+<table class="table table-margs">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prix base</th>
+            <th scope="col">Prix vente</th>
+            <th scope="col">Qte Init</th>
+            <th scope="col">Qte Actuel</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prod of produits; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{ prod.nom }}</td>
+            <td>{{ prod.prixBase }}</td>
+            <td>{{ prod.prixVente }}</td>
+            <td>{{ prod.qteInit }}</td>
+            <td>{{ prod.qteActuel }}</td>
+            <td>
+                <button class="btn btn-primary" (click)="updateProduit(prod)">Modifier</button>
+                <span>&nbsp;&nbsp;</span>
+                <button class="btn btn-danger" (click)="deleteProduit(prod)">Supprimer</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

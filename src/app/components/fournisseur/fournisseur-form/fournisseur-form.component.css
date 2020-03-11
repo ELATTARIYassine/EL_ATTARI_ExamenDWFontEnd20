@@ -1,0 +1,21 @@
+.margs {
+    width: 80% !important;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px;
+}
+
+.divConfig {
+    height: 120px;
+    background-color: #FFAA56;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    color: white;
+}
+
+.breadcrumb li {
+    color: white;
+}

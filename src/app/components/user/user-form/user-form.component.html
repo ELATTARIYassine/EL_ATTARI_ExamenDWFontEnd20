@@ -1,0 +1,58 @@
+<div class="divConfig">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item active" aria-current="page">Utilisateurs</li>
+    </ol>
+    <div class="container">
+        <h3>Gestion des utilisateurs</h3>
+    </div>
+</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a routerLink="/user-form">Ajouter utilisateur</a></li>
+            <li><a routerLink="/users">Liste utilisateurs</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container margs">
+    <form>
+        <!-- <div class="form-group">
+            <label for="profil">Profil</label>
+            <input type="text" [(ngModel)]="user.profil" name="z" class="form-control" id="profil" placeholder="Nom">
+        </div> -->
+        <div class="form-group">
+            <label for="profil">Profil</label>
+            <select class="form-control custom-select" name="profilSelect" id="" [(ngModel)]="user.profil">
+                <option value="" disabled selected>Select user's profil</option>
+                <option *ngFor="let profil of profils" value="{{ profil }}">
+                    {{ profil }}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="profil">Identifiant</label>
+            <input type="text" [(ngModel)]="user.identifiant" name="z" class="form-control" id="profil" placeholder="identifiant">
+        </div>
+        <div class="form-group">
+            <label for="em">Email</label>
+            <input type="email" [(ngModel)]="user.email" name="nom_court" class="form-control" id="em" placeholder="Nom court">
+        </div>
+        <div class="form-group">
+            <label for="pb">Photo</label>
+            <input type="text" [(ngModel)]="user.photo" name="prixBase" class="form-control" id="pb" placeholder="prix base">
+        </div>
+        <div class="form-group">
+            <label for="pv">Date création</label>
+            <input type="date" [(ngModel)]="user.date_creation" name="prixVente" class="form-control" id="pv" placeholder="Prix vente">
+        </div>
+        <div class="form-group">
+            <label for="sm">Date fin</label>
+            <input type="date" [(ngModel)]="user.date_fin" name="se" class="form-control" id="sm" placeholder="seuil max">
+        </div>
+        <div class="text-center">
+            <button type="submit" *ngIf="onAddOrUpdate" (click)="processForm()" class="btn btn-primary">Ajouter user</button>
+            <button type="submit" *ngIf="!onAddOrUpdate" (click)="processForm()" class="btn btn-primary">Modifier user</button>
+        </div>
+    </form>
+</div>

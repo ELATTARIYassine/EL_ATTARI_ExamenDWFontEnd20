@@ -1,0 +1,74 @@
+{
+  "produits": [
+    {
+      "id": 1,
+      "nom": "prod 1",
+      "nom_court": "fake1",
+      "prixBase": 2,
+      "prixVente": 2,
+      "seuilMax": 2,
+      "uniteProd": 2,
+      "image": "zaeaze",
+      "qteInit": 2,
+      "qteActuel": 2
+    },
+    {
+      "nom": "erwin",
+      "nom_court": "erwin",
+      "prixBase": 1,
+      "prixVente": 1,
+      "image": "erwin",
+      "qteActuel": 1,
+      "qteInit": 1,
+      "seuilMax": 1,
+      "uniteProd": 1,
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "date_creation": "2020-03-29",
+      "photo": "https://pngimage.net/wp-content/uploads/2018/05/button-profil-png-8.png",
+      "date_fin": "2020-03-20",
+      "email": "lol@gmail.com",
+      "profil": "EDITOR",
+      "id": 1,
+      "identifiant": "jhon"
+    },
+    {
+      "date_creation": "2020-03-14",
+      "photo": "https://pngimage.net/wp-content/uploads/2018/06/profil-png-5.png",
+      "date_fin": "2020-03-14",
+      "email": "mail@something.com",
+      "profil": "EDITOR",
+      "identifiant": "jhon",
+      "id": 2
+    }
+  ],
+  "fournisseurs": [
+    {
+      "nom": "fournisseur 1",
+      "nom_court": "fournisseur 1",
+      "ville": "ville 1",
+      "adresse": "N1 fournisseur 1",
+      "fax": "1231",
+      "mail": "fournisseur1@gmail.com",
+      "telFix": "123123123",
+      "telMobile": "182U31823",
+      "id": 2
+    }
+  ],
+  "clients": [
+    {
+      "nom": "client1",
+      "prenom": "client1",
+      "ville": "ville 2",
+      "adresse": "adresse 1",
+      "status": "client1",
+      "photo": "client1",
+      "email": "client1@mail.Com",
+      "tel": "123123",
+      "id": 1
+    }
+  ]
+}

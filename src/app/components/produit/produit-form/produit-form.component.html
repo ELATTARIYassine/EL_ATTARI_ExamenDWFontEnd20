@@ -1,0 +1,66 @@
+<div class="divConfig">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item active" aria-current="page">produit</li>
+    </ol>
+    <div class="container">
+        <h3>Gestion des produit</h3>
+    </div>
+</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a routerLink="/produits">Gestion des produits</a></li>
+            <li><a routerLink="/fournisseurs">Gestion des fournisseurs</a></li>
+            <li><a routerLink="/clients">Gestion des clients</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="text-center btn-margs">
+    <span>&nbsp;</span>
+    <button class="btn btn-primary" routerLink="/produits">Listes produits</button>
+</div>
+<div class="container margs">
+    <form>
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" [(ngModel)]="produit.nom" name="z" class="form-control" id="nom" placeholder="Nom">
+        </div>
+        <div class="form-group">
+            <label for="nc">Nom court</label>
+            <input type="text" [(ngModel)]="produit.nom_court" name="nom_court" class="form-control" id="nc" placeholder="Nom court">
+        </div>
+        <div class="form-group">
+            <label for="pb">Prix base</label>
+            <input type="number" [(ngModel)]="produit.prixBase" name="prixBase" class="form-control" id="pb" placeholder="prix base">
+        </div>
+        <div class="form-group">
+            <label for="pv">Prix vente</label>
+            <input type="number" [(ngModel)]="produit.prixVente" name="prixVente" class="form-control" id="pv" placeholder="Prix vente">
+        </div>
+        <div class="form-group">
+            <label for="sm">Seuil max</label>
+            <input type="number" [(ngModel)]="produit.seuilMax" name="se" class="form-control" id="sm" placeholder="seuil max">
+        </div>
+        <div class="form-group">
+            <label for="up">Unité du produit</label>
+            <input type="number" [(ngModel)]="produit.uniteProd" name="ups" class="form-control" id="up" placeholder="unité du produit">
+        </div>
+        <div class="form-group">
+            <label for="ip">Image du produit</label>
+            <input type="text" [(ngModel)]="produit.image" name="prd" class="form-control" id="ip" placeholder="unité du produit">
+        </div>
+        <div class="form-group">
+            <label for="qi">Quantite initiale</label>
+            <input type="number" [(ngModel)]="produit.qteInit" name="pi" class="form-control" id="qi" placeholder="quantite initiale">
+        </div>
+        <div class="form-group">
+            <label for="qa">Quantite actuel</label>
+            <input type="number" [(ngModel)]="produit.qteActuel" name="qa" class="form-control" id="qa" placeholder="quantite actuel">
+        </div>
+        <div class="text-center">
+            <button type="submit" *ngIf="onAddOrUpdate" (click)="processForm()" class="btn btn-primary">Ajouter produit</button>
+            <button type="submit" *ngIf="!onAddOrUpdate" (click)="processForm()" class="btn btn-primary">Modifier produit</button>
+        </div>
+    </form>
+</div>

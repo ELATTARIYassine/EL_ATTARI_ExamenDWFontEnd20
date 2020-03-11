@@ -1,0 +1,51 @@
+<div class="divConfig">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item active" aria-current="page">Client</li>
+    </ol>
+    <div class="container">
+        <h3>Gestion des clients</h3>
+    </div>
+</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a routerLink="/produits">Gestion des produits</a></li>
+            <li><a routerLink="/fournisseurs">Gestion des fournisseurs</a></li>
+            <li><a routerLink="/clients">Gestion des clients</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="text-center btn-margs">
+    <button class="btn btn-primary" (click)="newClient()">Ajouter client</button>
+    <span>&nbsp;</span>
+    <button class="btn btn-primary" routerLink="/clients">Listes clients</button>
+</div>
+<table class="table table-margs">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Ville</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Tel mobile</th>
+            <th scope="col">Email</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of clients; let i =index">
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ client.nom }}</td>
+            <td>{{ client.ville }}</td>
+            <td>{{ client.adresse }}</td>
+            <td>{{ client.status }}</td>
+            <td>{{ client.tel }}</td>
+            <td>
+                <button class="btn btn-primary" (click)="updateClient(client)">Modifier</button>
+                <span>&nbsp;&nbsp;</span>
+                <button class="btn btn-danger" (click)="deleteClient(client)">Supprimer</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

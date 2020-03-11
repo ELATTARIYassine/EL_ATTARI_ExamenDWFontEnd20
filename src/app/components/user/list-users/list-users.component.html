@@ -1,0 +1,45 @@
+<div class="divConfig">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item active" aria-current="page">Utilisateur</li>
+    </ol>
+    <div class="container">
+        <h3>Gestion des Utilisateurs</h3>
+    </div>
+</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a (click)="newUser()" style="cursor: pointer;">Ajouter Utilisateur</a></li>
+            <li><a routerLink="/users">Listes Utilisateurs</a></li>
+        </ul>
+    </div>
+</nav>
+<table class="table table-margs">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Profil</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date création</th>
+            <th scope="col">Image</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users; let i=index">
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ user.profil }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.date_creation }}</td>
+            <td>
+                <img style="height: 100px; width: auto;" src="{{ user.photo }}" alt="">
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="updateUser(user)">Modifier</button>
+                <span>&nbsp;&nbsp;</span>
+                <button class="btn btn-danger" (click)="deleteUser(user)">Supprimer</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

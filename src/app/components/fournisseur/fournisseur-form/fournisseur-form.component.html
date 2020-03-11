@@ -1,0 +1,62 @@
+<div class="divConfig">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item active" aria-current="page">fournisseur</li>
+    </ol>
+    <div class="container">
+        <h3>Gestion des fournisseurs</h3>
+    </div>
+</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a routerLink="/produits">Gestion des produits</a></li>
+            <li><a routerLink="/fournisseurs">Gestion des fournisseurs</a></li>
+            <li><a routerLink="/clients">Gestion des clients</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="text-center btn-margs">
+    <span>&nbsp;</span>
+    <button class="btn btn-primary" routerLink="/fournisseurs">Listes fournisseurs</button>
+</div>
+<div class="container margs">
+    <form>
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" [(ngModel)]="fournisseur.nom" name="z" class="form-control" id="nom" placeholder="Nom">
+        </div>
+        <div class="form-group">
+            <label for="nc">Nom court</label>
+            <input type="text" [(ngModel)]="fournisseur.nom_court" name="nom_court" class="form-control" id="nc" placeholder="Nom court">
+        </div>
+        <div class="form-group">
+            <label for="pb">Ville</label>
+            <input type="text" [(ngModel)]="fournisseur.ville" name="prixBase" class="form-control" id="pb" placeholder="Ville">
+        </div>
+        <div class="form-group">
+            <label for="pv">Adresse</label>
+            <input type="text" [(ngModel)]="fournisseur.adresse" name="prixVente" class="form-control" id="pv" placeholder="Adresse">
+        </div>
+        <div class="form-group">
+            <label for="sm">Tel fixe</label>
+            <input type="tel" [(ngModel)]="fournisseur.telFix" name="se" class="form-control" id="sm" placeholder="tel fixe">
+        </div>
+        <div class="form-group">
+            <label for="up">Tel mobile</label>
+            <input type="tel" [(ngModel)]="fournisseur.telMobile" name="ups" class="form-control" id="up" placeholder="Tel mobile">
+        </div>
+        <div class="form-group">
+            <label for="ip">Fax</label>
+            <input type="text" [(ngModel)]="fournisseur.fax" name="prd" class="form-control" id="ip" placeholder="Fax">
+        </div>
+        <div class="form-group">
+            <label for="qi">Email</label>
+            <input type="text" [(ngModel)]="fournisseur.mail" name="pi" class="form-control" id="qi" placeholder="Email">
+        </div>
+        <div class="text-center">
+            <button type="submit" *ngIf="onAddOrUpdate" (click)="processForm()" class="btn btn-primary">Ajouter fournisseur</button>
+            <button type="submit" *ngIf="!onAddOrUpdate" (click)="processForm()" class="btn btn-primary">Modifier fournisseur</button>
+        </div>
+    </form>
+</div>
